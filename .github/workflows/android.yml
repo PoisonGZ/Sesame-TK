@@ -75,13 +75,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: apk-compatible
-          path: ${{ steps.extract_apks.outputs.signed_compatible }}
+          path: ${{ steps.locate_apks.outputs.compatible_apk }}
 
       - name: Upload APK - Normal
         uses: actions/upload-artifact@v4
         with:
           name: apk-normal
-          path: ${{ steps.extract_apks.outputs.signed_normal }}
+          path: ${{ steps.locate_apks.outputs.normal_apk }}
 
       - name: Extract file names
         id: extract_info
